@@ -28,7 +28,7 @@ class TextformatterTextile extends Textformatter {
 	public static function getModuleInfo() {
 		return array(
 			'title' => 'Textile', 
-			'version' => 220, 
+			'version' => 230, 
 			'summary' => "Textile text formatting from Textpattern by Dean Allen with additions by Alex Shiels. For use with trusted input only.", 
 			'url' => "http://en.wikipedia.org/wiki/Textile_(markup_language)", 
 		); 
