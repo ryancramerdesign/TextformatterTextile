@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * ProcessWire Textile Textformatter (restricted version)
+ *
+ * The restricted version may be used with user-supplied input, blog comments, etc.
+ *
+ * ProcessWire 2.x 
+ * Copyright (C) 2012 by Ryan Cramer 
+ * Licensed under GNU/GPL v2, see LICENSE.TXT
+ * 
+ * http://www.processwire.com
+ * http://www.ryancramer.com
+ *
+ * T E X T I L E
+ * Copyright (c) 2003-2004, Dean Allen <dean@textism.com>
+ * All rights reserved.
+ * Thanks to Carlo Zottmann <carlo@g-blog.net> for refactoring
+ * Textile's procedural code into a class framework
+ * Additions and fixes Copyright (c) 2006    Alex Shiels       http://thresholdstate.com/
+ * Additions and fixes Copyright (c) 2010    Stef Dawson       http://stefdawson.com/
+ * Additions and fixes Copyright (c) 2010-12 Netcarver         http://github.com/netcarver
+ * Additions and fixes Copyright (c) 2011    Jeff Soo          http://ipsedixit.net
+ * Additions and fixes Copyright (c) 2012    Robert Wetzlmayr  http://wetzlmayr.com/
+ *
+ */
+
+class TextformatterTextileRestricted extends Textformatter {
+
+	public static function getModuleInfo() {
+		return array(
+			'title' => __('Textile', __FILE__), 
+			'summary' => __('Textile text formatting from Textpattern by Dean Allen with additions by Alex Shiels. This restricted version may be used with untrusted input too (like user-supplied input, blog comments, etc.).', __FILE__), 
+			'version' => 220, 
+			'url' => "http://en.wikipedia.org/wiki/Textile_(markup_language)", 
+		); 
+	}
+
+	public function format(&$str) {
+		require_once($this->config->paths->TextformatterTextile . 'classTextile.php'); 
+		$textile = new Textile();
+		$str = $textile->TextileRestricted($str); 
+	}
+}
