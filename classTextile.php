@@ -1043,7 +1043,7 @@ class Textile
 	function span($text)
 	{
 		$qtags = array('\*\*','\*','\?\?','-','__','_','%','\+','~','\^');
-		$pnct = ".,\"'?!;:ÜÝÇÈãÒÓâÔÕ";
+		$pnct = ".,\"'?!;:â€¹â€ºÂ«Â»â€žâ€œâ€â€šâ€˜â€™";
 		$this->span_depth++;
 
 		if( $this->span_depth <= $this->max_span_depth )
